@@ -1,12 +1,7 @@
 from flask import Flask
+from routes.contacts import contacts
 
 app = Flask(__name__)
 
+app.register_blueprint(contacts)
 
-@app.route("/")
-def home():
-    return "Hello, World 2"
-
-@app.route('/new')
-def add_contact():
-    return "saving a contact"
